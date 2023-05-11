@@ -1,0 +1,13 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "concat_space": {
+            "spacing": "one"
+        },
+        "new_with_braces": {
+            "anonymous_class": false
+        },
+        "heredoc_to_nowdoc": false,
+        "method_chaining_indentation": true
+    }
+}
