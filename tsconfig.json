@@ -12,8 +12,8 @@
         "noEmit": true,
         "skipLibCheck": true,
         "paths": {
-            "@/*": ["./resources/src/*"]
+            "@/*": [ "./resources/src/*" ]
         }
     },
-    "include": ["resources/src/**/*.ts", "resources/src/**/*.d.ts", "resources/src/**/*.vue"]
+    "include": [ "resources/src/**/*.ts", "resources/src/**/*.d.ts", "resources/src/**/*.vue" ]
 }
