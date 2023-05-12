@@ -21,8 +21,7 @@ export default defineConfig({
     }),
     AutoImport({
       imports: ['vue', '@vueuse/core'],
-      dts: 'resources/src/Types/auto-imports.d.ts',
-      vueTemplate: true
+      dts: 'resources/src/Types/auto-imports.d.ts'
     }),
     Components({
       dirs: ['resources/src/Components', 'resources/src/Layouts'],
