@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue'
 import laravel from 'laravel-vite-plugin'
 import path from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -17,6 +18,10 @@ export default defineConfig({
           includeAbsolute: false
         }
       }
+    }),
+    AutoImport({
+      imports: ['vue'],
+      dts: 'resources/src/types/auto-imports.d.ts'
     })
   ],
   resolve: {

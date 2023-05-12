@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import Dropdown from '@/Components/Dropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
