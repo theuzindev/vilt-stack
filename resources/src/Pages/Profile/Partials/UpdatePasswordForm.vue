@@ -10,7 +10,7 @@ const form = useForm({
   password_confirmation: ''
 })
 
-const updatePassword = () => {
+const submit = () => {
   form.put(route('password.update'), {
     preserveScroll: true,
     onSuccess: () => form.reset(),
@@ -38,7 +38,7 @@ const updatePassword = () => {
       </p>
     </header>
 
-    <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
+    <form @submit.prevent="submit" class="mt-6 space-y-6">
       <div>
         <InputLabel for="current_password" value="Current Password" />
 

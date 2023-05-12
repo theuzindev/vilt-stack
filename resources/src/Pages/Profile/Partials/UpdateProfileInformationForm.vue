@@ -6,12 +6,16 @@ defineProps<{
   status?: String
 }>()
 
-const user = usePage().props.auth.user
+const { user } = usePage().props
 
 const form = useForm({
   name: user.name,
   email: user.email
 })
+
+const submit = () => {
+  form.patch(route('profile.update'))
+}
 </script>
 
 <template>
@@ -24,7 +28,7 @@ const form = useForm({
       </p>
     </header>
 
-    <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
+    <form @submit.prevent="submit" class="mt-6 space-y-6">
       <div>
         <InputLabel for="name" value="Name" />
 
