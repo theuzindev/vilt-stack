@@ -2,7 +2,6 @@ import Vue from '@vitejs/plugin-vue'
 import Laravel from 'laravel-vite-plugin'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -12,16 +11,12 @@ export default defineConfig({
       ssr: 'resources/src/ssr.ts',
       refresh: true
     }),
-    VueMacros({
-      plugins: {
-        vue: Vue({
-          template: {
-            transformAssetUrls: {
-              base: null,
-              includeAbsolute: false
-            }
-          }
-        })
+    Vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false
+        }
       }
     }),
     AutoImport({
