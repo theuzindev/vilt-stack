@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link, useForm } from '@inertiajs/vue3'
+import { Link, useForm } from '@inertiajs/vue3'
 
 const form = useForm({
   name: '',
@@ -16,9 +16,7 @@ const submit = () => {
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Register" />
-
+  <GuestLayout title="Register">
     <form @submit.prevent="submit">
       <div>
         <InputLabel for="name" value="Name" />
@@ -89,11 +87,7 @@ const submit = () => {
           Already registered?
         </Link>
 
-        <PrimaryButton
-          class="ml-4"
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
           Register
         </PrimaryButton>
       </div>

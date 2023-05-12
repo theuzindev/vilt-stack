@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link, useForm } from '@inertiajs/vue3'
+import { Link, useForm } from '@inertiajs/vue3'
 
 defineProps<{
   canResetPassword?: boolean
@@ -20,9 +20,7 @@ const submit = () => {
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Log in" />
-
+  <GuestLayout title="Login">
     <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
       {{ status }}
     </div>
@@ -75,11 +73,7 @@ const submit = () => {
           Forgot your password?
         </Link>
 
-        <PrimaryButton
-          class="ml-4"
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
           Log in
         </PrimaryButton>
       </div>

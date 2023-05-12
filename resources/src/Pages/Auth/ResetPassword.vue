@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3'
 
 const props = defineProps<{
   email: string
@@ -21,9 +21,7 @@ const submit = () => {
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Reset Password" />
-
+  <GuestLayout title="Reset Password">
     <form @submit.prevent="submit">
       <div>
         <InputLabel for="email" value="Email" />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3'
 
 const form = useForm({
   password: ''
@@ -13,9 +13,7 @@ const submit = () => {
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Confirm Password" />
-
+  <GuestLayout title="Confirm Password">
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       This is a secure area of the application. Please confirm your password before continuing.
     </div>
@@ -36,11 +34,7 @@ const submit = () => {
       </div>
 
       <div class="flex justify-end mt-4">
-        <PrimaryButton
-          class="ml-4"
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
           Confirm
         </PrimaryButton>
       </div>
