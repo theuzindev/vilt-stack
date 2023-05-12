@@ -20,7 +20,7 @@ export default defineConfig({
       }
     }),
     AutoImport({
-      imports: ['vue'],
+      imports: ['vue', '@vueuse/core'],
       dts: 'resources/src/Types/auto-imports.d.ts',
       vueTemplate: true
     }),
