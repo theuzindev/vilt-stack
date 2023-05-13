@@ -7,8 +7,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     laravel({
-      input: 'resources/src/app.ts',
-      ssr: 'resources/src/ssr.ts',
+      input: 'resources/app.ts',
+      ssr: 'resources/ssr.ts',
       refresh: true
     }),
     vue({
@@ -21,11 +21,11 @@ export default defineConfig({
     }),
     autoImport({
       imports: ['vue', '@vueuse/core'],
-      dts: 'resources/src/Types/auto-imports.d.ts'
+      dts: 'resources/types/auto-imports.d.ts'
     }),
     components({
-      dirs: ['resources/src/Components', 'resources/src/Layouts'],
-      dts: 'resources/src/Types/components.d.ts'
+      dirs: ['resources/views/components', 'resources/views/layouts'],
+      dts: 'resources/types/components.d.ts'
     })
   ]
 })

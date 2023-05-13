@@ -3,9 +3,8 @@ import createServer from '@inertiajs/vue3/server'
 import { renderToString } from '@vue/server-renderer'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { DefineComponent, createSSRApp, h } from 'vue'
-import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
-
-const appName = 'Laravel'
+import { ZiggyVue } from '../vendor/tightenco/ziggy/dist/vue.m'
+import { appName } from './app'
 
 createServer((page) =>
   createInertiaApp({
