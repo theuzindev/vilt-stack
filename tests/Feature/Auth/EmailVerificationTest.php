@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
 
 test('email verification screen can be rendered', function () {
-    $user = User::factory()->create([
+    $user = User::factory()->createOne([
         'email_verified_at' => null,
     ]);
 
@@ -17,7 +17,7 @@ test('email verification screen can be rendered', function () {
 });
 
 test('email can be verified', function () {
-    $user = User::factory()->create([
+    $user = User::factory()->createOne([
         'email_verified_at' => null,
     ]);
 
@@ -37,7 +37,7 @@ test('email can be verified', function () {
 });
 
 test('email is not verified with invalid hash', function () {
-    $user = User::factory()->create([
+    $user = User::factory()->createOne([
         'email_verified_at' => null,
     ]);
 

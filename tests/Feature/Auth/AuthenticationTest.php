@@ -10,7 +10,7 @@ test('login screen can be rendered', function () {
 });
 
 test('users can authenticate using the login screen', function () {
-    $user = User::factory()->create();
+    $user = User::factory()->createOne();
 
     $response = $this->post('/login', [
         'email'    => $user->email,
@@ -22,7 +22,7 @@ test('users can authenticate using the login screen', function () {
 });
 
 test('users can not authenticate with invalid password', function () {
-    $user = User::factory()->create();
+    $user = User::factory()->createOne();
 
     $this->post('/login', [
         'email'    => $user->email,
