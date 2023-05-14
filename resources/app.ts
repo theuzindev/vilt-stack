@@ -1,4 +1,4 @@
-import './css/app.css'
+import './assets/app.css'
 import './bootstrap'
 
 import { createInertiaApp } from '@inertiajs/vue3'
@@ -11,7 +11,10 @@ export const appName = 'Laravel'
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
   resolve: (name) =>
-    resolvePageComponent(`./views/pages/${name}.vue`, import.meta.glob<DefineComponent>('./views/pages/**/*.vue')),
+    resolvePageComponent(
+      `./views/${name}.vue`,
+      import.meta.glob<DefineComponent>('./views/**/*.vue')
+    ),
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)

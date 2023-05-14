@@ -24,7 +24,7 @@ export default defineConfig({
       dts: 'resources/types/auto-imports.d.ts'
     }),
     components({
-      dirs: ['resources/views/components', 'resources/views/layouts'],
+      dirs: ['resources/components', 'resources/layouts'],
       dts: 'resources/types/components.d.ts'
     })
   ]

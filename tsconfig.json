@@ -20,8 +20,8 @@
         ]
     },
     "include": [
-        "resources/*.ts",
-        "resources/views/**/*.vue",
-        "resources/types/*.d.ts"
+        "resources/**/*.ts",
+        "resources/**/*.d.ts",
+        "resources/**/*.vue",
     ]
 }
