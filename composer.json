@@ -50,7 +50,9 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "fix": "pint"
+        "fix": [
+            "pint"
+        ]
     },
     "extra": {
         "laravel": {
