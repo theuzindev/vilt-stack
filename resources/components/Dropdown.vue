@@ -1,16 +1,13 @@
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    align?: 'left' | 'right'
-    width?: '48'
-    contentClasses?: string
-  }>(),
-  {
-    align: 'right',
-    width: '48',
-    contentClasses: 'py-1 bg-white dark:bg-gray-700'
-  }
-)
+const {
+  align = 'right',
+  width = '48',
+  contentClasses = 'py-1 bg-white dark:bg-gray-700'
+} = defineProps<{
+  align?: 'left' | 'right'
+  width?: '48'
+  contentClasses?: string
+}>()
 
 const closeOnEscape = (e: KeyboardEvent) => {
   if (open.value && e.key === 'Escape') {
@@ -24,13 +21,13 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 const widthClass = computed(() => {
   return {
     48: 'w-48'
-  }[props.width.toString()]
+  }[width.toString()]
 })
 
 const alignmentClasses = computed(() => {
-  if (props.align === 'left') {
+  if (align === 'left') {
     return 'origin-top-left left-0'
-  } else if (props.align === 'right') {
+  } else if (align === 'right') {
     return 'origin-top-right right-0'
   } else {
     return 'origin-top'

@@ -1,23 +1,20 @@
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    show?: boolean
-    maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-    closeable?: boolean
-  }>(),
-  {
-    show: false,
-    maxWidth: '2xl',
-    closeable: true
-  }
-)
+const {
+  show = false,
+  maxWidth = '2xl',
+  closeable = true
+} = defineProps<{
+  show?: boolean
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  closeable?: boolean
+}>()
 
 const emit = defineEmits(['close'])
 
 watch(
-  () => props.show,
+  () => show,
   () => {
-    if (props.show) {
+    if (show) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'visible'
@@ -26,13 +23,13 @@ watch(
 )
 
 const close = () => {
-  if (props.closeable) {
+  if (closeable) {
     emit('close')
   }
 }
 
 const closeOnEscape = (e: KeyboardEvent) => {
-  if (e.key === 'Escape' && props.show) {
+  if (e.key === 'Escape' && show) {
     close()
   }
 }
@@ -51,7 +48,7 @@ const maxWidthClass = computed(() => {
     lg: 'sm:max-w-lg',
     xl: 'sm:max-w-xl',
     '2xl': 'sm:max-w-2xl'
-  }[props.maxWidth]
+  }[maxWidth]
 })
 </script>
 

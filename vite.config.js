@@ -17,6 +17,9 @@ export default defineConfig({
           base: null,
           includeAbsolute: false
         }
+      },
+      script: {
+        propsDestructure: true
       }
     }),
     autoImport({
