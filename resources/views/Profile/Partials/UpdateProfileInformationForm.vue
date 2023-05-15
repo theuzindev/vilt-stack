@@ -82,7 +82,7 @@ const submit = () => {
       </div>
 
       <div class="flex items-center gap-4">
-        <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+        <ButtonPrimary :disabled="form.processing">Save</ButtonPrimary>
 
         <Transition
           enter-from-class="opacity-0"

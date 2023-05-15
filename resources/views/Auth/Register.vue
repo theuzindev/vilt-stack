@@ -87,13 +87,13 @@ const submit = () => {
           Already registered?
         </Link>
 
-        <PrimaryButton
+        <ButtonPrimary
           class="ml-4"
           :class="{ 'opacity-25': form.processing }"
           :disabled="form.processing"
         >
           Register
-        </PrimaryButton>
+        </ButtonPrimary>
       </div>
     </form>
   </GuestLayout>
