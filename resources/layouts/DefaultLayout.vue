@@ -4,7 +4,7 @@ import { Head, Link } from '@inertiajs/vue3'
 const showingNavigationDropdown = ref(false)
 
 defineProps<{
-  title: string
+  title?: string
 }>()
 </script>
 
@@ -19,7 +19,7 @@ defineProps<{
           <div class="flex">
             <!-- Logo -->
             <div class="shrink-0 flex items-center">
-              <Link :href="route('dashboard')">
+              <Link :href="route('home')">
                 <ApplicationLogo
                   class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
                 />
@@ -28,16 +28,14 @@ defineProps<{
 
             <!-- Navigation Links -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-              <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                Dashboard
-              </NavLink>
+              <NavLink :href="route('home')" :active="route().current('home')"> Home </NavLink>
             </div>
           </div>
 
           <div class="hidden sm:flex sm:items-center sm:ml-6">
-            <!-- Settings Dropdown -->
             <div class="ml-3 relative">
-              <Dropdown align="right" width="48">
+              <!-- Authenticated Links -->
+              <Dropdown align="right" width="48" v-if="$page.props.user">
                 <template #trigger>
                   <span class="inline-flex rounded-md">
                     <button
@@ -63,12 +61,18 @@ defineProps<{
                 </template>
 
                 <template #content>
-                  <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                  <DropdownLink :href="route('profile.edit')">Profile</DropdownLink>
                   <DropdownLink :href="route('logout')" method="post" as="button">
                     Log Out
                   </DropdownLink>
                 </template>
               </Dropdown>
+
+              <!-- Guest Links -->
+              <div class="flex gap-5" v-else>
+                <NavLink :href="route('login')">Login</NavLink>
+                <NavLink :href="route('login')">Register</NavLink>
+              </div>
             </div>
           </div>
 
@@ -111,13 +115,16 @@ defineProps<{
         class="sm:hidden"
       >
         <div class="pt-2 pb-3 space-y-1">
-          <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-            Dashboard
+          <ResponsiveNavLink :href="route('home')" :active="route().current('home')">
+            Home
           </ResponsiveNavLink>
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+        <div
+          class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600"
+          v-if="$page.props.user"
+        >
           <div class="px-4">
             <div class="font-medium text-base text-gray-800 dark:text-gray-200">
               {{ $page.props.user.name }}

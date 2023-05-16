@@ -9,7 +9,7 @@ import { ZiggyVue } from '../vendor/tightenco/ziggy/dist/vue.m'
 export const appName = 'Laravel'
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => (title ? `${title} - ${appName}` : appName),
   resolve: (name) =>
     resolvePageComponent(
       `./views/${name}.vue`,

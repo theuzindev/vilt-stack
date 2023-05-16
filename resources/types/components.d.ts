@@ -10,11 +10,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ApplicationLogo: typeof import('./../components/ApplicationLogo.vue')['default']
-    AuthenticatedLayout: typeof import('./../layouts/AuthenticatedLayout.vue')['default']
     ButtonDanger: typeof import('./../components/ButtonDanger.vue')['default']
     ButtonPrimary: typeof import('./../components/ButtonPrimary.vue')['default']
     ButtonSecondary: typeof import('./../components/ButtonSecondary.vue')['default']
     Checkbox: typeof import('./../components/Checkbox.vue')['default']
+    DefaultLayout: typeof import('./../layouts/DefaultLayout.vue')['default']
     Dropdown: typeof import('./../components/Dropdown.vue')['default']
     DropdownLink: typeof import('./../components/DropdownLink.vue')['default']
     GuestLayout: typeof import('./../layouts/GuestLayout.vue')['default']
