@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <Head :title="title" />
 
-  <div class="flex max-w-screen-2xl mx-auto min-h-screen">
+  <div class="flex max-w-screen-xl mx-auto min-h-screen">
     <LeftSidebar />
 
     <div class="flex-1 bg-gray-100 dark:bg-gray-900 lg:col-span-3 px-12 pt-8 overflow-y-auto">
