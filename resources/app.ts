@@ -4,7 +4,6 @@ import { DefineComponent, createApp, h } from 'vue'
 import { ZiggyVue } from '../vendor/tightenco/ziggy/dist/vue.m'
 
 import './assets/app.css'
-import './bootstrap'
 
 export const appName = 'Laravel'
 
